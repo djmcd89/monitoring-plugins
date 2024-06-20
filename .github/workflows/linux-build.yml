@@ -34,9 +34,9 @@ env:
 jobs:
 
   prepare:
-    runs-on:
-      - 'rhel8'
-      - 'self-hosted'
+    runs-on: ubuntu-latest
+      #- 'rhel8'
+      #- 'self-hosted'
 
     steps:
 
