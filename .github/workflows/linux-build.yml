@@ -139,9 +139,10 @@ jobs:
 
 
   build-rhel8:
-    runs-on:
-      - 'rhel8'
-      - 'self-hosted'
+    runs-on: ubuntu-latest
+    #runs-on:
+     # - 'rhel8'
+     # - 'self-hosted'
     needs:
       - 'prepare'
 
@@ -159,9 +160,10 @@ jobs:
 
 
   build-rhel9:
-    runs-on:
-      - 'rhel8'
-      - 'self-hosted'
+  runs-on: ubuntu-latest
+    #runs-on:
+    #  - 'rhel8'
+    #  - 'self-hosted'
     needs:
       - 'prepare'
 
@@ -262,9 +264,11 @@ jobs:
   # this would not work on the GitHub-hosted runners, as each job is isolated there,
   # but works when self-hosted (since there are no parallel jobs)
   upload-outputs:
-    runs-on:
-      - 'rhel8'
-      - 'self-hosted'
+    
+    runs-on: ubuntu-latest
+    #runs-on:
+    #  - 'rhel8'
+    #  - 'self-hosted'
     needs:  # we want this to run after the above jobs
       #- 'build-debian10'
       #- 'build-debian11'
@@ -288,9 +292,10 @@ jobs:
 
 
   cleanup:
-    runs-on:
-      - 'rhel8'
-      - 'self-hosted'
+    runs-on: ubuntu-latest
+    #runs-on:
+    #  - 'rhel8'
+    #  - 'self-hosted'
     needs:  # we want this to run after the above jobs
       - 'upload-outputs'
 
